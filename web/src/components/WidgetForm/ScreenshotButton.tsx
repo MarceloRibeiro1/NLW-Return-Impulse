@@ -1,4 +1,5 @@
 import html2canvas from "html2canvas";
+import { backgroundPosition } from "html2canvas/dist/types/css/property-descriptors/background-position";
 import { Camera, Trash } from "phosphor-react";
 import { useState } from "react";
 import { Loading } from "../Loading";
@@ -28,7 +29,9 @@ export function ScreenshotButton(props:ScreenshotButtonProps){
           type="button"
           className="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
           style={{
-              backgroundImage: `url(${props.screenshot})`
+              backgroundImage: `url(${props.screenshot})`,
+              backgroundPosition: 'right bottom',
+              backgroundSize: 180
           }}
           onClick={() => props.onScreenshotTook(null)}
         >
